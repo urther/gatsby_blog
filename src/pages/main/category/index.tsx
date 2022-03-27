@@ -27,11 +27,10 @@ const CategoryList: FunctionComponent<CategoryListProps> = ({
   return (
     <Wrapper>
       {categoryList.map(category => (
-        <li>
+        <li key={category}>
           <CategoryItem
             to={`/?category=${category}`}
             active={selectedCategory === category ? true : false}
-            key={category}
           >
             {category}
           </CategoryItem>

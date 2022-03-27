@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useMemo } from 'react'
+import React, { FunctionComponent } from 'react'
 import queryString, { ParsedQuery } from 'query-string'
 import { graphql } from 'gatsby'
 
@@ -6,7 +6,7 @@ import GlobalStyle from 'components/common/GlobalStyle'
 
 import { Header, Footer } from 'components'
 import { PostList, CategoryList } from 'pages/main'
-import { IndexPageProps } from 'types'
+import { IndexPageProps, PostListItemType } from 'types'
 
 const IndexPage: FunctionComponent<IndexPageProps> = ({
   location: { search },
@@ -20,13 +20,27 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({
       ? 'All'
       : parsed.category
 
+  const categoryList: string[] = ['All']
+  {
+    edges.forEach(
+      ({
+        node: {
+          frontmatter: { categories },
+        },
+      }: PostListItemType) =>
+        categories.forEach(item =>
+          categoryList.includes(item) ? '' : categoryList.push(item),
+        ),
+    )
+  }
+
   return (
     <div>
       <GlobalStyle />
       <Header />
       <CategoryList
         selectedCategory={selectedCategory}
-        categoryList={['string', 'zz', 'Web']}
+        categoryList={categoryList}
       />
       <PostList selectedCategory={selectedCategory} posts={edges} />
       <Footer />

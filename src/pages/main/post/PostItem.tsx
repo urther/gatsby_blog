@@ -33,8 +33,8 @@ const PostItem: FunctionComponent<PostProps> = ({
       <InfoWrapper>
         <Title>{title}</Title>
         <Date>{date}</Date>
-        {categories.map(category => (
-          <CategoryItem>{category}</CategoryItem>
+        {categories.map((category, i) => (
+          <CategoryItem key={i}>{category}</CategoryItem>
         ))}
         <Summary>{summary}</Summary>
       </InfoWrapper>
