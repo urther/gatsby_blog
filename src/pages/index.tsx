@@ -2,11 +2,9 @@ import React, { FunctionComponent } from 'react'
 import queryString, { ParsedQuery } from 'query-string'
 import { graphql } from 'gatsby'
 
-import GlobalStyle from 'components/common/GlobalStyle'
-
-import { Header, Footer } from 'components'
-import { PostList, CategoryList } from 'pages/main'
+import { PostList, CategoryList, Introduction } from 'pages/main'
 import { IndexPageProps, PostListItemType } from 'types'
+import Template from 'components/common/Template'
 
 const IndexPage: FunctionComponent<IndexPageProps> = ({
   location: { search },
@@ -35,16 +33,14 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({
   }
 
   return (
-    <div>
-      <GlobalStyle />
-      <Header />
+    <Template>
+      <Introduction />
       <CategoryList
         selectedCategory={selectedCategory}
         categoryList={categoryList}
       />
       <PostList selectedCategory={selectedCategory} posts={edges} />
-      <Footer />
-    </div>
+    </Template>
   )
 }
 

@@ -9,16 +9,6 @@ const defaultStyle = css`
     font-weight: normal;
     font-style: normal;
   }
-
-  * {
-    font-family: 'NanumSquareRound', sanserif;
-  }
-
-  a,
-  a:hover {
-    text-decoration: none;
-  }
-
   html,
   body,
   div,
@@ -121,27 +111,23 @@ const defaultStyle = css`
   section {
     display: block;
   }
+
+  * {
+    font-family: 'NanumSquareRound', sanserif;
+  }
+
+  a,
+  a:hover {
+    text-decoration: none;
+    font-family: 'NanumSquareRound', sanserif;
+    color: #1d1d20;
+  }
   body {
     line-height: 1;
   }
   ol,
   ul {
     list-style: none;
-  }
-  blockquote,
-  q {
-    quotes: none;
-  }
-  blockquote:before,
-  blockquote:after,
-  q:before,
-  q:after {
-    content: '';
-    content: none;
-  }
-  table {
-    border-collapse: collapse;
-    border-spacing: 0;
   }
 `
 

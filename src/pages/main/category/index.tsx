@@ -3,23 +3,8 @@ import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 
 import { CategoryListProps, CategoryItemProps, GatsbyLinkProps } from 'types'
+import { Wrapper } from './category.styled'
 
-const Wrapper = styled('ul')``
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
-  <Link {...props} />
-))<CategoryItemProps>`
-  margin-right: 20px;
-  padding: 5px 0;
-  font-size: 18px;
-  font-weight: ${({ active }) => (active ? '800' : '400')};
-  cursor: pointer;
-
-  &:last-of-type {
-    margin-right: 0;
-  }
-`
 const CategoryList: FunctionComponent<CategoryListProps> = ({
   selectedCategory,
   categoryList,
@@ -32,7 +17,7 @@ const CategoryList: FunctionComponent<CategoryListProps> = ({
             to={`/?category=${category}`}
             active={selectedCategory === category ? true : false}
           >
-            {category}
+            #{category}
           </CategoryItem>
         </li>
       ))}
@@ -41,3 +26,18 @@ const CategoryList: FunctionComponent<CategoryListProps> = ({
 }
 
 export default CategoryList
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
+  <Link {...props} />
+))<CategoryItemProps>`
+  margin-right: 20px;
+  padding: 5px 0;
+  font-size: 18px;
+  font-weight: ${({ active }) => (active ? '700' : '400')};
+  cursor: pointer;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+`

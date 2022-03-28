@@ -3,18 +3,25 @@ import { Link } from 'gatsby'
 
 export const PostItemWrapper = styled(Link)`
   display: flex;
-  margin: 20px 0;
+  margin: 60px 20px;
 
-  * {
-    margin-top: 5px;
+  @media (max-width: 768px) {
+    display: inline-block;
+    position: relative;
+    margin: 20px 0;
   }
 `
 
 export const InfoWrapper = styled('div')`
-  width: 100%;
+  width: 80%;
   line-height: 1.5;
   margin-left: 20px;
   margin-top: 10px;
+
+  @media (max-width: 768px) {
+    margin-left: 10px;
+    width: 95%;
+  }
 `
 
 export const Title = styled('h2')`
@@ -28,22 +35,36 @@ export const Title = styled('h2')`
   -webkit-box-orient: vertical;
   font-size: 25px;
   font-weight: 700;
+  color: #1d1d20;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 `
 
 export const Date = styled('div')`
   font-size: 16px;
   font-weight: 400;
   opacity: 0.7;
+
+  @media (max-width: 768px) {
+    font-size: 15px;
+  }
 `
 export const CategoryItem = styled('div')`
   display: inline-block;
+  margin-top: 5px;
   margin-right: 5px;
   padding: 3px 5px;
   border-radius: 3px;
-  background: black;
+  background: #1d1d20;
   font-size: 14px;
   font-weight: 700;
   color: white;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
 export const Summary = styled('div')`
   display: -webkit-box;
@@ -55,6 +76,11 @@ export const Summary = styled('div')`
   -webkit-box-orient: vertical;
   font-size: 16px;
   opacity: 0.8;
+  margin-top: 10px;
+
+  @media (max-width: 768px) {
+    font-size: 15px;
+  }
 `
 
 export const Thumbnail = styled('div')`
@@ -62,5 +88,13 @@ export const Thumbnail = styled('div')`
     width: 270px;
     height: 240px;
     object-fit: cover;
+  }
+
+  @media (max-width: 768px) {
+    img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
   }
 `

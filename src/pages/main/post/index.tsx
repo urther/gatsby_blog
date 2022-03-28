@@ -53,7 +53,7 @@ const PostList: FunctionComponent<PostListProps> = ({
 }
 
 const PostListWrapper = styled('section')`
-  width: 85%;
+  width: 80%;
   margin: 0 auto;
 `
 
