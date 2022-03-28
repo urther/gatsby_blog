@@ -9,6 +9,7 @@ exports.createPages = async ({ actions }) => {
 }
 
 const path = require('path')
+const { createFilePath } = require(`gatsby-source-filesystem`)
 
 // Setup Import Alias
 exports.onCreateWebpackConfig = ({ getConfig, actions }) => {
@@ -26,4 +27,15 @@ exports.onCreateWebpackConfig = ({ getConfig, actions }) => {
       },
     },
   })
+}
+
+// Generate a Slug Each Post Data
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions
+
+  if (node.internal.type === `MarkdownRemark`) {
+    const slug = createFilePath({ node, getNode })
+
+    createNodeField({ node, name: 'slug', value: slug })
+  }
 }

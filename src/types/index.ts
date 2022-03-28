@@ -45,6 +45,9 @@ export type PostFrontmatterType = {
 export type PostListItemType = {
   node: {
     id: string
+    fields: {
+      slug: string
+    }
     frontmatter: PostFrontmatterType
   }
 }

@@ -7,11 +7,6 @@ import useInfiniteScroll, {
   useInfiniteScrollType,
 } from 'hooks/useInfiniteScroll'
 
-const PostListWrapper = styled('section')`
-  width: 85%;
-  margin: 0 auto;
-`
-
 type PostListProps = {
   selectedCategory: string
   posts: PostListItemType[]
@@ -42,11 +37,24 @@ const PostList: FunctionComponent<PostListProps> = ({
 
   return (
     <PostListWrapper ref={containerRef}>
-      {postList.map(({ node: { id, frontmatter } }: PostListItemType) => (
-        <PostItem {...frontmatter} link="https://www.google.co.kr/" key={id} />
-      ))}
+      {postList.map(
+        ({
+          node: {
+            id,
+            fields: { slug },
+            frontmatter,
+          },
+        }: PostListItemType) => (
+          <PostItem {...frontmatter} link={slug} key={id} />
+        ),
+      )}
     </PostListWrapper>
   )
 }
+
+const PostListWrapper = styled('section')`
+  width: 85%;
+  margin: 0 auto;
+`
 
 export default PostList
