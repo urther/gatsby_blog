@@ -1,18 +1,28 @@
 import styled from '@emotion/styled'
 
 export const PostHeader = styled('div')`
-  width: 800px;
+  width: 75%;
   margin: 50px auto 10px auto;
   text-align: center;
 
-  div {
+  .date {
     animation: fadein 2s;
     color: #cc2a2a;
   }
+
+  div:hover {
+    opacity:1;
+  }
+
   h1 {
+    width:90%;
+    margin:0 auto;
+    font-family: 'NanumSquareRound', sanserif;
     margin-top: 10px;
     font-size: 50px;
     animation: fadein 4s;
+    padding-bottom:10px;
+    border-bottom:1px solid #f5f5f7;
   }
   @keyframes fadein {
     0% {
@@ -22,12 +32,28 @@ export const PostHeader = styled('div')`
       opacity: 1;
     }
   }
+
+  @media (max-width: 768px) {
+    h1{
+      font-size:35px;
+    }
+  }
+}
 `
+
+export const GobackIconWrapper = styled('div')`
+  opacity: 0.4;
+  display: inline-block;
+  padding: 7px;
+  float: left;
+  cursor: pointer;
+`
+
 export const PostContentWrapper = styled('section')`
   // Renderer Style
   display: flex;
   flex-direction: column;
-  width: 800px;
+  width: 75%;
   margin: 0 auto;
   padding: 40px 0;
   word-break: break-all;
@@ -116,5 +142,9 @@ export const PostContentWrapper = styled('section')`
   code[class*='language-'],
   pre[class*='language-'] {
     tab-size: 2;
+  }
+
+  * {
+    font-family: 'NanumSquareRound', sanserif;
   }
 `

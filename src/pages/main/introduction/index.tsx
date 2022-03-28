@@ -14,8 +14,8 @@ const Introduction = () => {
         <SubTitle>FRONTEND DEVELOPER</SubTitle>
         <Title>박민지입니다.</Title>
         <span>
-          상상하는 것을 만들 수 있는 프론트엔드 개발자입니다. 제 자기소개는
-          이러쿵 저렇쿵이구요 . 오다다다다 열심히 하겠습니다.
+          상상하는 것을 만들 수 있는 프론트엔드 개발자입니다.
+          <br /> 좋은 결과물을 만들어내는 일에 보람을 느끼고 사랑하는 사람입니다
         </span>
       </IntroductionInfo>
     </IntroductionWrapper>

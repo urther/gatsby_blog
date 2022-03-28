@@ -8,7 +8,7 @@ const Header = () => {
     <StyledHeader>
       <Wrapper>
         <h1>
-          <Link to="/">슬기로운 프론트엔드</Link>
+          <Link to="/">슬기로운 프론트엔드 라이프</Link>
         </h1>
 
         <HeaderLinkWrapper>

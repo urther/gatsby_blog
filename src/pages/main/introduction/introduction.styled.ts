@@ -9,7 +9,7 @@ export const IntroductionWrapper = styled('section')`
   align-items: center;
 
   img {
-    height: 350px;
+    height: 330px;
     margin-left: 15%;
   }
 
