@@ -1,12 +1,71 @@
-exports.createPages = async ({ actions }) => {
+// exports.createPages = async ({ actions }) => {
+//   const { createPage } = actions
+//   createPage({
+//     path: '/using-dsg',
+//     component: require.resolve('./src/templates/using-dsg.js'),
+//     context: {},
+//     defer: true,
+//   })
+// }
+
+// Generate Post Page Through Markdown Data
+exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
-  createPage({
-    path: '/using-dsg',
-    component: require.resolve('./src/templates/using-dsg.js'),
-    context: {},
-    defer: true,
-  })
+
+  // Get All Markdown File For Paging
+  const queryAllMarkdownData = await graphql(
+    `
+      {
+        allMarkdownRemark(
+          sort: {
+            order: DESC
+            fields: [frontmatter___date, frontmatter___title]
+          }
+        ) {
+          edges {
+            node {
+              fields {
+                slug
+              }
+            }
+          }
+        }
+      }
+    `,
+  )
+
+  // Handling GraphQL Query Error
+  if (queryAllMarkdownData.errors) {
+    reporter.panicOnBuild(`Error while running query`)
+    return
+  }
+
+  // Import Post Template Component
+  const PostTemplateComponent = path.resolve(
+    __dirname,
+    'src/templates/post_template.tsx',
+  )
+
+  // Page Generating Function
+  const generatePostPage = ({
+    node: {
+      fields: { slug },
+    },
+  }) => {
+    const pageOptions = {
+      path: slug,
+      component: PostTemplateComponent,
+      context: { slug },
+    }
+
+    createPage(pageOptions)
+  }
+
+  // Generate Post Page And Passing Slug Props for Query
+  queryAllMarkdownData.data.allMarkdownRemark.edges.forEach(generatePostPage)
 }
+
+// path
 
 const path = require('path')
 const { createFilePath } = require(`gatsby-source-filesystem`)
