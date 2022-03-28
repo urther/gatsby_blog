@@ -13,16 +13,16 @@ module.exports = {
         allExtensions: true,
       },
     },
-    {
-      resolve: `gatsby-plugin-sharp`,
-      options: {
-        defaults: {
-          formats: ['auto', 'webp'],
-          quality: 100,
-          placeholder: 'blurred',
-        },
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-sharp`,
+    //   options: {
+    //     defaults: {
+    //       formats: ['auto', 'webp'],
+    //       quality: 100,
+    //       placeholder: 'blurred',
+    //     },
+    //   },
+    // },
     `gatsby-plugin-emotion`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
