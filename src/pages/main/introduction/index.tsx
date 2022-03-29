@@ -9,7 +9,14 @@ import {
 const Introduction = () => {
   return (
     <IntroductionWrapper>
-      <img src="assets/introduction.gif" alt="이미지" />
+      <video autoPlay loop muted playsInline>
+        <source
+          src="/assets/introduction.webm"
+          height={'330px'}
+          type="video/webm"
+        />
+        {/* <img src="assets/introduction.gif" height="330px" alt="이미지" /> */}
+      </video>
       <IntroductionInfo>
         <SubTitle>FRONTEND DEVELOPER</SubTitle>
         <Title>박민지입니다.</Title>

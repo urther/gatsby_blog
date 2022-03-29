@@ -110,17 +110,14 @@ const defaultStyle = css`
   nav,
   section {
     display: block;
-  }
-
-  * {
     font-family: 'NanumSquareRound', sanserif;
   }
 
   a,
   a:hover {
     text-decoration: none;
-    font-family: 'NanumSquareRound', sanserif;
     color: #1d1d20;
+    font-family: 'NanumSquareRound', sanserif;
   }
   body {
     line-height: 1;

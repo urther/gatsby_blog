@@ -3,12 +3,11 @@ import styled from '@emotion/styled'
 export const IntroductionWrapper = styled('section')`
   width: 100%;
   height: 400px;
-  background-color: #fcfcff;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 
-  img {
+  video {
     height: 330px;
     margin-left: 15%;
   }
@@ -16,7 +15,7 @@ export const IntroductionWrapper = styled('section')`
   @media (max-width: 768px) {
     height: 300px;
 
-    img {
+    video {
       height: 220px;
       margin-left: 0;
       margin-top: 20px;

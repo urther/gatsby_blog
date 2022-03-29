@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-export const FooterWrapper = styled.div`
+export const FooterWrapper = styled('footer')`
   background-color: #f5f5f7;
   color: #1d1d20;
   display: grid;
