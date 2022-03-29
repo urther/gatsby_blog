@@ -1,13 +1,12 @@
-import React, { FunctionComponent, ReactNode } from 'react'
-
-import GlobalStyle from 'components/common/GlobalStyle'
+import React, { ReactNode } from 'react'
+import GlobalStyle from './GlobalStyle'
 import { Header, Footer } from 'components'
 
 type TemplateProps = {
   children: ReactNode
 }
 
-const Template: FunctionComponent<TemplateProps> = ({ children }) => {
+const Template = ({ children }: TemplateProps) => {
   return (
     <>
       <GlobalStyle />
