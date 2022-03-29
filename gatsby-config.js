@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `슬기로운 프론트엔드 라이프`,
+    description: `주니어 프론트엔드 개발자 박민지의 블로그입니다`,
+    author: `urther`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
@@ -13,16 +13,16 @@ module.exports = {
         allExtensions: true,
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-sharp`,
-    //   options: {
-    //     defaults: {
-    //       formats: ['auto', 'webp'],
-    //       quality: 100,
-    //       placeholder: 'blurred',
-    //     },
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: ['auto', 'webp'],
+          quality: 100,
+          placeholder: 'blurred',
+        },
+      },
+    },
     `gatsby-plugin-emotion`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
