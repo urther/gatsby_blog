@@ -2,13 +2,8 @@ import React, { FunctionComponent } from 'react'
 import { Global, css } from '@emotion/react'
 
 const defaultStyle = css`
-  @font-face {
-    font-family: 'NanumSquareRound';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff')
-      format('woff');
-    font-weight: normal;
-    font-style: normal;
-  }
+  @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+
   html,
   body,
   div,
@@ -97,6 +92,7 @@ const defaultStyle = css`
     font: inherit;
     vertical-align: baseline;
   }
+
   /* HTML5 display-role reset for older browsers */
   article,
   aside,
@@ -110,14 +106,15 @@ const defaultStyle = css`
   nav,
   section {
     display: block;
-    font-family: 'NanumSquareRound', sanserif;
+    font-family: 'Nanum Gothic', sans-serif;
+    min-width: 480px;
   }
 
   a,
   a:hover {
     text-decoration: none;
     color: #1d1d20;
-    font-family: 'NanumSquareRound', sanserif;
+    font-family: 'Nanum Gothic', sans-serif;
   }
   body {
     line-height: 1;
