@@ -2,8 +2,9 @@ import React, { FunctionComponent } from 'react'
 import { graphql } from 'gatsby'
 import Template from 'components/common/Template'
 
-import { PostHead, PostContent } from 'pages/detail'
+import { PostHead, PostContent, PostCategory } from 'pages/detail'
 import { PostTemplateProps } from './types'
+import CommentWidget from 'pages/detail/CommentWidget'
 
 const PostTemplate: FunctionComponent<PostTemplateProps> = ({
   data: {
@@ -14,7 +15,7 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = ({
     {
       node: {
         html,
-        frontmatter: { title, date },
+        frontmatter: { title, date, categories },
       },
     },
   ] = edges
@@ -23,6 +24,8 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = ({
     <Template>
       <PostHead title={title} date={date} />
       <PostContent html={html} />
+      <PostCategory category={categories} />
+      <CommentWidget />
     </Template>
   )
 }

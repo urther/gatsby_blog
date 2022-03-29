@@ -15,9 +15,9 @@ export const PostHeader = styled('div')`
   }
 
   h1 {
-    width:90%;
+    width:80%;
     margin:0 auto;
-    font-family: 'NanumSquareRound', sanserif;
+    // font-family: 'NanumSquareRound', sanserif;
     margin-top: 10px;
     font-size: 50px;
     animation: fadein 4s;
@@ -53,7 +53,7 @@ export const PostContentWrapper = styled('section')`
   // Renderer Style
   display: flex;
   flex-direction: column;
-  width: 75%;
+  width: 55%;
   margin: 0 auto;
   padding: 40px 0;
   word-break: break-all;
@@ -72,7 +72,7 @@ export const PostContentWrapper = styled('section')`
   h1,
   h2,
   h3 {
-    font-weight: 800;
+    font-weight: 700;
     margin-bottom: 30px;
   }
 
@@ -105,7 +105,7 @@ export const PostContentWrapper = styled('section')`
     margin: 30px 0;
     padding: 5px 15px;
     border-left: 2px solid #000000;
-    font-weight: 800;
+    font-weight: 700;
   }
 
   // Adjust List Element Style
@@ -145,6 +145,30 @@ export const PostContentWrapper = styled('section')`
   }
 
   * {
-    font-family: 'NanumSquareRound', sanserif;
+    // font-family: 'NanumSquareRound', sanserif;
+  }
+`
+
+export const PostCategoryWrapper = styled('ul')`
+  // background-color: red;
+  padding: 15px;
+  width: 60%;
+  display: flex;
+  margin: 20px auto;
+  border-top: 1px solid #f5f5f7;
+
+  li,
+  span {
+    margin: 5px 8px;
+    padding: 5px 10px;
+  }
+
+  span {
+  }
+
+  li {
+    background-color: #efefef;
+    color: #fefefef;
+    border-radius: 10px;
   }
 `
