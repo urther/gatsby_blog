@@ -1,30 +1,18 @@
 import React, { FunctionComponent } from 'react'
-import PostItem from './postItem'
 import styled from '@emotion/styled'
 
-export type PostType = {
-  node: {
-    id: string
-    frontmatter: {
-      title: string
-      summary: string
-      date: string
-      categories: string[]
-      thumbnail: {
-        publicURL?: string
-      }
-    }
-  }
-}
+import PostItem from './postItem'
+
+import { PostListItemType } from 'types/types'
 
 type PostListProps = {
-  posts: PostType[]
+  posts: PostListItemType[]
 }
 
 const PostList: FunctionComponent<PostListProps> = ({ posts }) => {
   return (
     <PostListWrapper>
-      {posts?.map(({ node: { id, frontmatter } }: PostType) => (
+      {posts?.map(({ node: { id, frontmatter } }: PostListItemType) => (
         <PostItem {...frontmatter} link="https://www.google.co.kr" key={id} />
       ))}
     </PostListWrapper>

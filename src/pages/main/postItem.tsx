@@ -2,16 +2,9 @@ import React, { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 
-type PostItemProps = {
-  title: string
-  date: string
-  categories: string[]
-  summary: string
-  thumbnail: {
-    publicURL?: string
-  }
-  link: string
-}
+import { PostFrontmatterType } from 'types/types'
+
+type PostItemProps = PostFrontmatterType & { link: string }
 
 const PostItem: FunctionComponent<PostItemProps> = ({
   title,
