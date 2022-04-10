@@ -1,14 +1,26 @@
 import { Template, Introduction } from 'components'
 import { graphql } from 'gatsby'
-import React from 'react'
-import PostList from './main/postList'
+import React, { FunctionComponent } from 'react'
+import PostList, { PostType } from './main/postList'
 
-const IndexPage = function () {
+type IndexPageProps = {
+  data: {
+    allMarkdownRemark: {
+      edges: PostType[]
+    }
+  }
+}
+
+const IndexPage: FunctionComponent<IndexPageProps> = ({
+  data: {
+    allMarkdownRemark: { edges },
+  },
+}) => {
   return (
     <>
       <Template>
         <Introduction />
-        <PostList />
+        <PostList posts={edges} />
       </Template>
     </>
   )

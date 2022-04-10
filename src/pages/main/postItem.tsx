@@ -1,12 +1,41 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 
-const PostItem = () => {
+type PostItemProps = {
+  title: string
+  date: string
+  categories: string[]
+  summary: string
+  thumbnail: {
+    publicURL?: string
+  }
+  link: string
+}
+
+const PostItem: FunctionComponent<PostItemProps> = ({
+  title,
+  date,
+  categories,
+  summary,
+  thumbnail,
+  link,
+}) => {
+  const { publicURL } = { ...thumbnail }
   return (
-    <>
-      <PostItemWrapper to="/" />
-    </>
+    <PostItemWrapper to={link}>
+      <Thumbnail>
+        {publicURL ? <img src={publicURL} alt="이미지" /> : <></>}
+      </Thumbnail>
+      <InfoWrapper>
+        <Title>{title}</Title>
+        <Date>{date}</Date>
+        {categories?.map(category => (
+          <CategoryItem key={category}>{category}</CategoryItem>
+        ))}
+        <Summary>{summary}</Summary>
+      </InfoWrapper>
+    </PostItemWrapper>
   )
 }
 
